@@ -1,6 +1,15 @@
+// components/Footer.js
 import Link from "next/link"
 import Image from "next/image"
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react"
 
 export default function Footer() {
   const services = [
@@ -13,14 +22,14 @@ export default function Footer() {
   ]
 
   const serviceAreas = [
-    { name: "Delhi NCR", href: "/services" },
-    { name: "Gurgaon", href: "/services" },
-    { name: "Garhi Harsaru", href: "/services" },
-    { name: "Pausa", href: "/services" },
-    { name: "Faridabad", href: "/services" },
-    { name: "Noida", href: "/services" },
-    { name: "Greater Noida", href: "/services" },
-    { name: "Ghaziabad", href: "/services" },
+    { name: "Delhi NCR", href: "/service/delhi-ncr" },
+    { name: "Gurgaon", href: "/service/gurgaon" },
+    { name: "Garhi Harsaru", href: "/service/garhi-harsaru" },
+    { name: "Pausa", href: "/service/pausa" },
+    { name: "Faridabad", href: "/service/faridabad" },
+    { name: "Noida", href: "/service/noida" },
+    { name: "Greater Noida", href: "/service/greater-noida" },
+    { name: "Ghaziabad", href: "/service/ghaziabad" },
   ]
 
   const quickLinks = [
@@ -47,7 +56,12 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
               <div className="relative w-12 h-12">
-                <Image src="/logo.png" alt="Karni Movers and Packers Logo" fill className="object-contain" />
+                <Image
+                  src="/logo.png"
+                  alt="Karni Movers and Packers Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-red-400">KARNI MOVERS</span>
@@ -55,8 +69,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-300 leading-relaxed">
-              Trusted packers and movers with 15+ years of experience. We provide professional relocation services
-              across India with complete safety and reliability.
+              Trusted packers and movers with 15+ years of experience. We provide professional relocation services across India with complete safety and reliability.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (

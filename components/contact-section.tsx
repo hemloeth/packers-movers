@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -18,6 +17,8 @@ export default function ContactSection() {
     message: "",
   })
 
+  const [thankYouMessage, setThankYouMessage] = useState("")
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -25,11 +26,44 @@ export default function ContactSection() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Contact form submitted:", formData)
-    // Handle form submission
+
+    try {
+      const response = await fetch("https://formspree.io/f/myzjovoe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        })
+        setThankYouMessage("Thank you! Your message has been sent successfully.")
+      } else {
+        setThankYouMessage("Oops! Something went wrong. Please try again later.")
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      setThankYouMessage("An error occurred. Please try again later.")
+    }
   }
+
+  useEffect(() => {
+    if (thankYouMessage) {
+      const timer = setTimeout(() => {
+        setThankYouMessage("")
+      }, 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [thankYouMessage])
 
   const contactInfo = [
     {
@@ -151,7 +185,7 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  <div>
+                  {/* <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
                     <Input
                       name="subject"
@@ -160,7 +194,7 @@ export default function ContactSection() {
                       placeholder="Enter subject"
                       className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                     />
-                  </div>
+                  </div> */}
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
@@ -181,6 +215,12 @@ export default function ContactSection() {
                   >
                     Send Message
                   </Button>
+
+                  {thankYouMessage && (
+                    <p className="text-green-600 font-medium text-sm mt-4 text-center">
+                      {thankYouMessage}
+                    </p>
+                  )}
                 </form>
               </CardContent>
             </Card>

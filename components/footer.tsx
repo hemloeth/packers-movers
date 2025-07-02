@@ -120,21 +120,21 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>123 Business District</p>
-                  <p>New Delhi, India - 110001</p>
+                  <p> Garhi Harsuru</p>
+                  <p>Gurgaon, India - 122505</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-red-400 flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>+91 9211475722</p>
-                  <p>+91 9876543210</p>
+                  <p>+91 9216179851</p>
+                  <p>+91 9571968317</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-red-400 flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>info@karnimoverspacker.com</p>
+                  <p>karnipackerandmover.com</p>
                 </div>
               </div>
             </div>

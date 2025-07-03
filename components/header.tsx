@@ -55,8 +55,8 @@ export default function Header() {
                 <Image src="/logo.png" alt="Karni Movers and Packers Logo" fill className="object-contain" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-red-600">MOVERS</span>
-                <span className="text-sm text-gray-600 font-medium pl-2">& PACKERS</span>
+                <span className="text-xl font-bold text-red-600"> KARNI PACKERS</span>
+                <span className="text-sm text-gray-600 font-medium pl-2">& MOVERS</span>
               </div>
             </Link>
 

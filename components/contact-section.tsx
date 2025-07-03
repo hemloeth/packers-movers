@@ -69,17 +69,17 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: "Our Location",
-      details: ["123 Business District", "New Delhi, India - 110001"],
+      details: [" shri Krishna colony garhi harsaru", "Gurgaon, India - 122505"],
     },
     {
       icon: Phone,
       title: "Phone Numbers",
-      details: ["+91 9211475722", "+91 9876543210"],
+      details: ["+91 9216179851", "+91 9571968317"],
     },
     {
       icon: Mail,
       title: "Email Address",
-      details: ["info@karnimoverspacker.com", "support@karnimoverspacker.com"],
+      details: ["karnipackerandmover@gmail.com"],
     },
     {
       icon: Clock,
@@ -115,9 +115,13 @@ export default function ContactSection() {
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-2">{info.title}</h4>
                           {info.details.map((detail, detailIndex) => (
-                            <p key={detailIndex} className="text-gray-600 text-sm">
-                              {detail}
-                            </p>
+                              <p
+                                  key={detailIndex}
+                                  className="text-gray-600 text-sm break-words overflow-hidden max-w-full"
+                                  style={{ wordBreak: "break-word" }}
+                              >
+                                {detail}
+                              </p>
                           ))}
                         </div>
                       </div>
@@ -134,7 +138,7 @@ export default function ContactSection() {
                   <div className="text-center text-gray-500">
                     <MapPin className="w-12 h-12 mx-auto mb-2" />
                     <p>Interactive Map</p>
-                    <p className="text-sm">Location: New Delhi, India</p>
+                    <p className="text-sm">Location: Gurgaon, India</p>
                   </div>
                 </div>
               </CardContent>

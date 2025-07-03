@@ -82,7 +82,7 @@ export default function ModernHeroCarousel() {
   }
 
   return (
-      <section className="relative h-[60vh] md:h-screen w-full overflow-hidden bg-gradient-to-br from-gray-50 to-red-50">
+      <section className="relative h-[30vh] md:h-screen w-full overflow-hidden bg-gradient-to-br from-gray-50 to-red-50">
         <div
             className="relative h-full w-full"
             onTouchStart={handleTouchStart}

@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
     <section className="py-20 bg-gradient-to-br from-red-600 to-orange-600">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Why Choose Karni Movers & Packers?</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Why Choose Karni Packers & Movers?</h2>
           <p className="text-xl text-red-100 max-w-3xl mx-auto">
             We are committed to providing exceptional relocation services that exceed your expectations. Here's what
             makes us the preferred choice for thousands of customers.

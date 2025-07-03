@@ -64,8 +64,8 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-red-400">KARNI MOVERS</span>
-                <span className="text-sm text-gray-300 font-medium">& PACKERS</span>
+                <span className="text-xl font-bold text-red-400">MOVERS</span>
+                <span className="text-sm text-gray-300 font-medium p-2">& PACKERS</span>
               </div>
             </Link>
             <p className="text-gray-300 leading-relaxed">
@@ -120,7 +120,7 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p> Garhi Harsuru</p>
+                  <p>shri Krishna colony garhi harsaru</p>
                   <p>Gurgaon, India - 122505</p>
                 </div>
               </div>

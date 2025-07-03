@@ -31,11 +31,11 @@ export default function Header() {
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mb-2 sm:mb-0">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              <span>+91 9211475722</span>
+              <span>9216179851</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              <span>info@karnimoverspacker.com</span>
+              <span>karnipackerandmover@gmail.com</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -56,7 +56,7 @@ export default function Header() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-red-600">MOVERS</span>
-                <span className="text-sm text-gray-600 font-medium">& PACKERS</span>
+                <span className="text-sm text-gray-600 font-medium pl-2">& PACKERS</span>
               </div>
             </Link>
 

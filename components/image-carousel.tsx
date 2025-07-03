@@ -1,12 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
 
-export default function ModernImageCarousel() {
+export default function ModernHeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
@@ -41,7 +38,7 @@ export default function ModernImageCarousel() {
     return () => clearInterval(interval)
   }, [isAutoPlaying, images.length])
 
-  const goToSlide = (index: number) => {
+  const goToSlide = (index) => {
     setCurrentIndex(index)
   }
 
@@ -58,92 +55,74 @@ export default function ModernImageCarousel() {
   }
 
   return (
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-red-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Our Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Quality moving and packing services
-            </p>
-          </div>
-
-          <div className="relative max-w-4xl mx-auto">
-            {/* Modern Card Carousel */}
-            <Card className="overflow-hidden shadow-lg border-0 rounded-xl">
-              <CardContent className="p-0 relative group">
-                {/* Image with fade animation */}
-                <div className="relative h-[400px] w-full">
-                  {images.map((image, index) => (
-                      <div
-                          key={index}
-                          className={`absolute inset-0 transition-opacity duration-500 ${
-                              index === currentIndex ? "opacity-100" : "opacity-0"
-                          }`}
-                      >
-                        <Image
-                            src={image.src}
-                            alt={image.alt}
-                            fill
-                            className="object-cover"
-                            priority={index === currentIndex}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                      </div>
-                  ))}
-                </div>
-
-                {/* Content with slide-up animation */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform transition-all duration-500 translate-y-0">
-                  <h3 className="text-2xl font-bold mb-1">{images[currentIndex].title}</h3>
-                  <p className="text-gray-200">{images[currentIndex].description}</p>
-                </div>
-
-                {/* Minimal Navigation Arrows (appear on hover) */}
-                <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button
-                      variant="ghost"
-                      size="icon"
-                      className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md"
-                      onClick={goToPrev}
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </Button>
-                  <Button
-                      variant="ghost"
-                      size="icon"
-                      className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md"
-                      onClick={goToNext}
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </Button>
-                </div>
-
-                {/* Play/Pause Button */}
-                <Button
-                    variant="ghost"
-                    size="icon"
-                    className="absolute top-4 right-4 bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md"
-                    onClick={toggleAutoPlay}
+      <section className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-gray-50 to-red-50">
+        <div className="relative h-full w-full">
+          {/* Image with slide animation */}
+          <div className="relative h-full w-full">
+            {images.map((image, index) => (
+                <div
+                    key={index}
+                    className={`absolute inset-0 transition-transform duration-700 ease-in-out ${
+                        index === currentIndex
+                            ? "translate-x-0"
+                            : index < currentIndex
+                                ? "-translate-x-full"
+                                : "translate-x-full"
+                    }`}
                 >
-                  {isAutoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Modern Dot Indicators */}
-            <div className="flex justify-center mt-6 gap-1">
-              {images.map((_, index) => (
-                  <button
-                      key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`w-8 h-1.5 rounded-full transition-all duration-300 ${
-                          index === currentIndex ? "bg-red-500 w-12" : "bg-gray-300 hover:bg-gray-400"
-                      }`}
-                      aria-label={`Go to slide ${index + 1}`}
+                  <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover"
                   />
-              ))}
-            </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                </div>
+            ))}
           </div>
+
+          {/* Content with slide-up animation */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform transition-all duration-500 translate-y-0 z-10">
+            <h3 className="text-2xl font-bold mb-1">{images[currentIndex].title}</h3>
+            <p className="text-gray-200">{images[currentIndex].description}</p>
+          </div>
+
+          {/* Navigation Arrows */}
+          <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 hover:opacity-100 transition-opacity z-20 group">
+            <button
+                className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md p-2 transition-all duration-300"
+                onClick={goToPrev}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+                className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md p-2 transition-all duration-300"
+                onClick={goToNext}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Play/Pause Button */}
+          <button
+              className="absolute top-4 right-4 bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md p-2 transition-all duration-300 z-20"
+              onClick={toggleAutoPlay}
+          >
+            {isAutoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+          </button>
+        </div>
+
+        {/* Modern Dot Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-1 z-20">
+          {images.map((_, index) => (
+              <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-8 h-1.5 rounded-full transition-all duration-300 ${
+                      index === currentIndex ? "bg-red-500 w-12" : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+              />
+          ))}
         </div>
       </section>
   )

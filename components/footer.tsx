@@ -64,8 +64,8 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-red-400">MOVERS</span>
-                <span className="text-sm text-gray-300 font-medium p-2">& PACKERS</span>
+                <span className="text-xl font-bold text-red-400">KARNI PACKERS</span>
+                <span className="text-sm text-gray-300 font-medium p-2">& MOVERS</span>
               </div>
             </Link>
             <p className="text-gray-300 leading-relaxed">

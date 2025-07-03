@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Head from "next/head";
-// hello
+// hello there
 import {
   Truck,
   Home,

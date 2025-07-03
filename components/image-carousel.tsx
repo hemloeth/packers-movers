@@ -6,6 +6,8 @@ import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
 export default function ModernHeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
 
   const images = [
     {
@@ -27,6 +29,9 @@ export default function ModernHeroCarousel() {
       description: "Maximum protection",
     },
   ]
+
+  // Minimum swipe distance to trigger slide change
+  const minSwipeDistance = 50
 
   useEffect(() => {
     if (!isAutoPlaying) return
@@ -54,9 +59,36 @@ export default function ModernHeroCarousel() {
     setIsAutoPlaying(!isAutoPlaying)
   }
 
+  // Touch event handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+
+    if (isLeftSwipe) goToNext()
+    if (isRightSwipe) goToPrev()
+
+    setTouchStart(null)
+    setTouchEnd(null)
+  }
+
   return (
-      <section className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-gray-50 to-red-50">
-        <div className="relative h-full w-full">
+      <section className="relative h-[60vh] md:h-screen w-full overflow-hidden bg-gradient-to-br from-gray-50 to-red-50">
+        <div
+            className="relative h-full w-full"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+        >
           {/* Image with slide animation */}
           <div className="relative h-full w-full">
             {images.map((image, index) => (
@@ -81,44 +113,50 @@ export default function ModernHeroCarousel() {
           </div>
 
           {/* Content with slide-up animation */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform transition-all duration-500 translate-y-0 z-10">
-            <h3 className="text-2xl font-bold mb-1">{images[currentIndex].title}</h3>
-            <p className="text-gray-200">{images[currentIndex].description}</p>
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white transform transition-all duration-500 translate-y-0 z-10">
+            <h3 className="text-xl md:text-2xl font-bold mb-1">{images[currentIndex].title}</h3>
+            <p className="text-sm md:text-base text-gray-200">{images[currentIndex].description}</p>
           </div>
 
-          {/* Navigation Arrows */}
-          <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 hover:opacity-100 transition-opacity z-20 group">
+          {/* Navigation Arrows - Always visible on mobile, shown on hover on desktop */}
+          <div className="absolute inset-0 flex items-center justify-between px-2 md:px-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-20">
             <button
-                className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md p-2 transition-all duration-300"
+                className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md p-1.5 md:p-2 transition-all duration-300"
                 onClick={goToPrev}
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
             </button>
             <button
-                className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md p-2 transition-all duration-300"
+                className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md p-1.5 md:p-2 transition-all duration-300"
                 onClick={goToNext}
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
 
-          {/* Play/Pause Button */}
+          {/* Play/Pause Button - Smaller on mobile */}
           <button
-              className="absolute top-4 right-4 bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md p-2 transition-all duration-300 z-20"
+              className="absolute top-3 right-3 md:top-4 md:right-4 bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md p-1.5 md:p-2 transition-all duration-300 z-20"
               onClick={toggleAutoPlay}
           >
-            {isAutoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+            {isAutoPlaying ? (
+                <Pause className="w-3 h-3 md:w-4 md:h-4" />
+            ) : (
+                <Play className="w-3 h-3 md:w-4 md:h-4" />
+            )}
           </button>
         </div>
 
-        {/* Modern Dot Indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-1 z-20">
+        {/* Modern Dot Indicators - Smaller on mobile */}
+        <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-1 z-20">
           {images.map((_, index) => (
               <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-8 h-1.5 rounded-full transition-all duration-300 ${
-                      index === currentIndex ? "bg-red-500 w-12" : "bg-gray-300 hover:bg-gray-400"
+                  className={`w-6 h-1 md:w-8 md:h-1.5 rounded-full transition-all duration-300 ${
+                      index === currentIndex
+                          ? "bg-red-500 md:w-12 w-8"
+                          : "bg-gray-300 hover:bg-gray-400"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
               />

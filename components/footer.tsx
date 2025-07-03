@@ -57,7 +57,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <div className="relative w-12 h-12">
                 <Image
-                  src="/logo.png"
+                  src="/carousel/logo.png"
                   alt="Karni Movers and Packers Logo"
                   fill
                   className="object-contain"

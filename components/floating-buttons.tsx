@@ -5,15 +5,15 @@ import { Button } from "@/components/ui/button"
 
 export default function FloatingButtons() {
   const handleCall = () => {
-    window.open("tel:+919211475722", "_self")
+    window.open("tel:+919216179851", "_self")
   }
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/919211475722?text=Hello, I need moving services", "_blank")
+    window.open("https://wa.me/919216179851?text=Hello, I need moving services", "_blank")
   }
 
   const handleEmail = () => {
-    window.open("mailto:info@karnimoverspacker.com", "_self")
+    window.open("mailto:karnipackerandmover@gmail.com", "_self")
   }
 
   return (

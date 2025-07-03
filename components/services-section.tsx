@@ -18,7 +18,7 @@ export default function ServicesSection() {
     },
     {
       icon: Car,
-      title: "Car Transportation",
+      title: "Vehicle Transportation",
       description: "Safe and secure car carrier services with door-to-door delivery and full insurance coverage.",
       features: ["Door to Door Service", "GPS Tracking", "Insurance Coverage", "Damage-Free Delivery"],
     },

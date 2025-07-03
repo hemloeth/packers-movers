@@ -26,7 +26,7 @@ export default function TestimonialsSection() {
       location: "Chennai to Hyderabad",
       rating: 5,
       text: "Outstanding car transportation service. My car was delivered safely and on time. The GPS tracking feature gave me peace of mind throughout the journey.",
-      service: "Car Transportation",
+      service: "Vehicle Transportation",
     },
     {
       name: "Sunita Gupta",

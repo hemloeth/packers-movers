@@ -15,7 +15,7 @@ export default function Footer() {
   const services = [
     "Household Shifting",
     "Office Relocation",
-    "Car Transportation",
+    "Vehicle Transportation",
     "Packing Services",
     "Loading & Unloading",
     "Storage & Warehousing",

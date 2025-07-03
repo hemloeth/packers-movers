@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
 
-export default function ImageCarousel() {
+export default function ModernImageCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
@@ -14,38 +14,20 @@ export default function ImageCarousel() {
     {
       src: "/carousel/image1.png",
       alt: "Professional Movers Packing Services",
-      title: "Professional Packing Services",
-      description: "Expert team handling your belongings with utmost care",
+      title: "Professional Packing",
+      description: "Expert handling with care",
     },
     {
       src: "/carousel/image2.png",
       alt: "Loading and Unloading Services",
-      title: "Safe Loading & Unloading",
-      description: "Trained professionals with proper equipment",
+      title: "Safe Transport",
+      description: "Trained professionals",
     },
     {
       src: "/carousel/image3.png",
       alt: "Quality Packing Materials",
-      title: "Quality Packing Materials",
-      description: "High-grade materials for maximum protection",
-    },
-    {
-      src: "/carousel/image4.png",
-      alt: "Complete Moving Solutions",
-      title: "Complete Moving Solutions",
-      description: "End-to-end relocation services for your peace of mind",
-    },
-    {
-      src: "/carousel/image5.png",
-      alt: "Karni Movers Team",
-      title: "Experienced Team",
-      description: "15+ years of trusted moving experience",
-    },
-    {
-      src: "/carousel/image6.png",
-      alt: "Professional Moving Services",
-      title: "Professional Service",
-      description: "Reliable and efficient moving solutions",
+      title: "Premium Materials",
+      description: "Maximum protection",
     },
   ]
 
@@ -53,8 +35,8 @@ export default function ImageCarousel() {
     if (!isAutoPlaying) return
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 4000)
+      setCurrentIndex((prev) => (prev + 1) % images.length)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [isAutoPlaying, images.length])
@@ -63,12 +45,12 @@ export default function ImageCarousel() {
     setCurrentIndex(index)
   }
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
   }
 
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+  const goToPrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
   }
 
   const toggleAutoPlay = () => {
@@ -76,98 +58,93 @@ export default function ImageCarousel() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-red-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Professional Services</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See our expert team in action providing top-quality moving and packing services
-          </p>
-        </div>
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-red-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Our Services</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Quality moving and packing services
+            </p>
+          </div>
 
-        <div className="relative max-w-6xl mx-auto">
-          <Card className="overflow-hidden shadow-2xl border-0">
-            <CardContent className="p-0 relative">
-              {/* Main Image */}
-              <div className="relative h-[400px] md:h-[500px] lg:h-[600px]">
-                <Image
-                  src={images[currentIndex].src || "/placeholder.svg"}
-                  alt={images[currentIndex].alt}
-                  fill
-                  className="object-cover transition-all duration-500"
-                  priority
-                />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">{images[currentIndex].title}</h3>
-                  <p className="text-lg md:text-xl opacity-90">{images[currentIndex].description}</p>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Modern Card Carousel */}
+            <Card className="overflow-hidden shadow-lg border-0 rounded-xl">
+              <CardContent className="p-0 relative group">
+                {/* Image with fade animation */}
+                <div className="relative h-[400px] w-full">
+                  {images.map((image, index) => (
+                      <div
+                          key={index}
+                          className={`absolute inset-0 transition-opacity duration-500 ${
+                              index === currentIndex ? "opacity-100" : "opacity-0"
+                          }`}
+                      >
+                        <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            className="object-cover"
+                            priority={index === currentIndex}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                      </div>
+                  ))}
                 </div>
-              </div>
 
-              {/* Navigation Arrows */}
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white border-0 shadow-lg"
-                onClick={goToPrevious}
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </Button>
+                {/* Content with slide-up animation */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform transition-all duration-500 translate-y-0">
+                  <h3 className="text-2xl font-bold mb-1">{images[currentIndex].title}</h3>
+                  <p className="text-gray-200">{images[currentIndex].description}</p>
+                </div>
 
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white border-0 shadow-lg"
-                onClick={goToNext}
-              >
-                <ChevronRight className="w-6 h-6" />
-              </Button>
+                {/* Minimal Navigation Arrows (appear on hover) */}
+                <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Button
+                      variant="ghost"
+                      size="icon"
+                      className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md"
+                      onClick={goToPrev}
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </Button>
+                  <Button
+                      variant="ghost"
+                      size="icon"
+                      className="bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md"
+                      onClick={goToNext}
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </Button>
+                </div>
 
-              {/* Auto-play Toggle */}
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute top-4 right-4 bg-white/90 hover:bg-white border-0 shadow-lg"
-                onClick={toggleAutoPlay}
-              >
-                {isAutoPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
-              </Button>
-            </CardContent>
-          </Card>
+                {/* Play/Pause Button */}
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute top-4 right-4 bg-white/80 hover:bg-white text-gray-900 rounded-full shadow-md"
+                    onClick={toggleAutoPlay}
+                >
+                  {isAutoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                </Button>
+              </CardContent>
+            </Card>
 
-          {/* Thumbnail Navigation */}
-          <div className="flex justify-center gap-2 mt-6 overflow-x-auto pb-2">
-            {images.map((image, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`relative flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                  index === currentIndex ? "border-red-500 shadow-lg scale-110" : "border-gray-300 hover:border-red-300"
-                }`}
-              >
-                <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill className="object-cover" />
-              </button>
-            ))}
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-4">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "bg-red-500 scale-125" : "bg-gray-300 hover:bg-red-300"
-                }`}
-              />
-            ))}
+            {/* Modern Dot Indicators */}
+            <div className="flex justify-center mt-6 gap-1">
+              {images.map((_, index) => (
+                  <button
+                      key={index}
+                      onClick={() => goToSlide(index)}
+                      className={`w-8 h-1.5 rounded-full transition-all duration-300 ${
+                          index === currentIndex ? "bg-red-500 w-12" : "bg-gray-300 hover:bg-gray-400"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                  />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   )
 }

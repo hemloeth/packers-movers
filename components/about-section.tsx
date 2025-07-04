@@ -55,7 +55,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/placeholder.svg?height=600&width=500"
+                src="/carousel/image6.png"
                 alt="Professional Moving Team"
                 fill
                 className="object-cover"

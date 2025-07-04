@@ -2,6 +2,9 @@
 
 import { Phone, MessageCircle, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { RiWhatsappFill } from "react-icons/ri"
+
+
 
 export default function FloatingButtons() {
   const handleCall = () => {
@@ -33,7 +36,7 @@ export default function FloatingButtons() {
         className="w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 shadow-lg hover:shadow-xl transition-all duration-300"
         aria-label="WhatsApp us"
       >
-        <MessageCircle className="w-6 h-6" />
+        <RiWhatsappFill className="w-6 h-6" />
       </Button>
 
       <Button

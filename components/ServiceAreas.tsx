@@ -52,12 +52,59 @@ const gurgaonAreas: string[] = [
   "New Gurgaon",
   "Vatika India Next",
   "Nirvana Country",
+  "Sector 83",
+  "Sector 84",
+  "Sector 85",
+  "Sector 86",
+  "Sector 88",
+  "Sector 89",
+  "Sector 90",
+  "Sector 91",
+  "Sector 92",
+  "Sector 93",
+  "Sector 94",
+  "Sector 95",
+  "Sector 99",
+  "Sector 102",
+  "Sector 103",
+  "Sector 104",
+  "Sector 105",
+  "Sector 106",
+  "Sector 107",
+  "Sector 108",
+  "Sector 109",
+  "Sector 110",
+  "Sector 111",
+  "Sector 112",
+  "Sector 113",
+  "Sector 114",
+  "Sector 115",
+  "Sector 116",
+  "Sector 117",
+  "Sector 118",
+  "Sector 119",
+  "Sector 120",
+  "Rajendra Park",
+  "Jharsa",
+  "Farrukhnagar",
+  "Kadipur",
+  "Tikri",
+  "Islampur",
+  "Behrampur",
+  "Chakkarpur",
+  "Wazirabad",
+  "Kanhai",
+  "Sikanderpur",
+  "Bhondsi",
+  "Basai",
+  "Chanderlok",
+  "Ashok Vihar Phase 2"
 ]
 
 const ServiceAreas: React.FC = () => {
   return (
-    <section className="bg-gray-900 text-white py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full bg-gray-900 text-white py-16 px-4">
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-red-400 text-center mb-6">
           Service Areas in Gurgaon
         </h2>
@@ -66,15 +113,13 @@ const ServiceAreas: React.FC = () => {
           key locations of Gurgaon, Haryana.
         </p>
 
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-5">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
           {gurgaonAreas.map((area) => (
             <li key={area}>
-              <Link
-                href={`/service/${area.toLowerCase().replace(/\s+/g, "-")}`}
-              >
-                <div className="bg-gray-800 hover:bg-gray-700 p-4 rounded-lg text-center transition-colors">
-                  <span className="text-gray-300 hover:text-white cursor-pointer">
-                    {area}
+              <Link href={`/service/${area.toLowerCase().replace(/\s+/g, "-")}`}>
+                <div className="min-w-[400px] p-4 rounded-xl transition duration-200 shadow hover:shadow-lg cursor-pointer">
+                  <span className="text-sm text-gray-300 hover:text-white block text-center whitespace-nowrap overflow-hidden text-ellipsis">
+                    Packers and Movers in {area}
                   </span>
                 </div>
               </Link>

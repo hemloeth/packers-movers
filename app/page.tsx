@@ -11,13 +11,13 @@ import FloatingButtons from "@/components/floating-buttons"
 import ServiceAreas from "@/components/ServiceAreas"
 
 export const metadata: Metadata = {
-  title: "Karni Movers and Packers - Professional Relocation Services | Best Packers and Movers",
+  title: "Karni packers and movers - Professional Relocation Services | Best Packers and Movers",
   description:
-    "Karni Movers and Packers offers professional packing and moving services across India. Trusted relocation experts with 15+ years experience. Get free quotes for household shifting, office relocation, car transportation.",
+    "Karni packers and movers offers professional packing and moving services across India. Trusted relocation experts with 15+ years experience. Get free quotes for household shifting, office relocation, car transportation.",
   keywords:
     "packers and movers, relocation services, household shifting, office relocation, car transportation, professional movers, packing services, moving company, Karni movers, Gurgaon packers, Delhi movers",
   openGraph: {
-    title: "Karni Movers and Packers - Professional Relocation Services",
+    title: "Karni packers and movers - Professional Relocation Services",
     description:
       "Trusted packers and movers with 15+ years experience. Professional household shifting, office relocation, and car transportation services.",
     type: "website",

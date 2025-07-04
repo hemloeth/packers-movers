@@ -98,7 +98,7 @@ const gurgaonAreas: string[] = [
   "Bhondsi",
   "Basai",
   "Chanderlok",
-  "Ashok Vihar Phase 2"
+  "Ashok Vihar Phase 2",
 ]
 
 const ServiceAreas: React.FC = () => {
@@ -109,16 +109,15 @@ const ServiceAreas: React.FC = () => {
           Service Areas in Gurgaon
         </h2>
         <p className="text-gray-300 text-center max-w-2xl mx-auto mb-10">
-          Karni Movers & Packers offers moving and packing services in these
-          key locations of Gurgaon, Haryana.
+          Karni Movers & Packers offers moving and packing services in these key locations of Gurgaon, Haryana.
         </p>
 
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
           {gurgaonAreas.map((area) => (
             <li key={area}>
               <Link href={`/service/${area.toLowerCase().replace(/\s+/g, "-")}`}>
-                <div className="min-w-[400px] p-4 rounded-xl transition duration-200 shadow hover:shadow-lg cursor-pointer">
-                  <span className="text-sm text-gray-300 hover:text-white block text-center whitespace-nowrap overflow-hidden text-ellipsis">
+                <div className="w-full p-4 rounded-xl transition duration-200 shadow hover:shadow-lg cursor-pointer ">
+                  <span className="text-sm text-gray-300 hover:text-white block text-center break-words">
                     Packers and Movers in {area}
                   </span>
                 </div>

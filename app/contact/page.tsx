@@ -3,11 +3,12 @@ import Header from "@/components/header"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 import FloatingButtons from "@/components/floating-buttons"
+import ServiceAreas from "@/components/ServiceAreas"
 
 export const metadata: Metadata = {
-  title: "Contact Us - Karni Movers and Packers | Get Free Quote",
+  title: "Contact Us - Karni packers and movers | Get Free Quote",
   description:
-    "Contact Karni Movers and Packers for professional relocation services. Get free quotes, expert consultation, and 24/7 customer support.",
+    "Contact Karni packers and movers for professional relocation services. Get free quotes, expert consultation, and 24/7 customer support.",
   keywords:
     "contact packers movers, free moving quote, relocation consultation, moving company contact, customer support",
 }
@@ -19,6 +20,7 @@ export default function ContactPage() {
       <div className="pt-20">
         <ContactSection />
       </div>
+      <ServiceAreas />
       <Footer />
       <FloatingButtons />
     </div>

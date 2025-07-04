@@ -6,14 +6,14 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Karni Movers and Packers - Professional Relocation Services",
+  title: "Karni packers and movers - Professional Relocation Services",
   description:
     "Trusted packers and movers with 15+ years experience. Professional household shifting, office relocation, car transportation services across India.",
   keywords:
     "packers and movers, relocation services, household shifting, office relocation, car transportation, professional movers, packing services, moving company, Karni movers",
-  authors: [{ name: "Karni Movers and Packers" }],
-  creator: "Karni Movers and Packers",
-  publisher: "Karni Movers and Packers",
+  authors: [{ name: "Karni packers and movers" }],
+  creator: "Karni packers and movers",
+  publisher: "Karni packers and movers",
   formatDetection: {
     email: false,
     address: false,
@@ -24,17 +24,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Karni Movers and Packers - Professional Relocation Services",
+    title: "Karni packers and movers - Professional Relocation Services",
     description:
       "Trusted packers and movers with 15+ years experience. Professional household shifting, office relocation, car transportation services across India.",
     url: "https://karnimoverspacker.com",
-    siteName: "Karni Movers and Packers",
+    siteName: "Karni packers and movers",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Karni Movers and Packers",
+        alt: "Karni packers and movers",
       },
     ],
     locale: "en_US",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Karni Movers and Packers - Professional Relocation Services",
+    title: "Karni packers and movers - Professional Relocation Services",
     description:
       "Trusted packers and movers with 15+ years experience. Professional household shifting, office relocation, car transportation services across India.",
     images: ["/logo.png"],

@@ -58,7 +58,7 @@ export default function Footer() {
               <div className="relative w-12 h-12">
                 <Image
                   src="/carousel/logo.png"
-                  alt="Karni Movers and Packers Logo"
+                  alt="Karni packers and movers Logo"
                   fill
                   className="object-contain"
                 />

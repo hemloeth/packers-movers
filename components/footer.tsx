@@ -91,27 +91,18 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
-                    {service}
-                  </Link>
+                  <div style={{ width: 'fit-content', padding: "8px", borderRadius: "5px", backgroundColor: "#1f2937" }}>
+                    <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
+                      {service}
+                    </Link>
+                  </div>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Service Areas */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 text-red-400">Service Areas</h3>
-            <ul className="space-y-3">
-              {serviceAreas.map((area, index) => (
-                <li key={index}>
-                  <Link href={area.href} className="text-gray-300 hover:text-white transition-colors">
-                    {area.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          
 
           {/* Contact Info */}
           <div>

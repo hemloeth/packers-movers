@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-red-600 text-white py-2 px-4">
+      {/* <div className="bg-red-600 text-white py-2 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mb-2 sm:mb-0">
             <div className="flex items-center gap-2">
@@ -43,7 +43,7 @@ export default function Header() {
             <span>Customer Login</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Header */}
       <header className="bg-white shadow-lg sticky top-0 z-50">

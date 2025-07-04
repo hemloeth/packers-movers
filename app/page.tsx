@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/testimonials-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 import FloatingButtons from "@/components/floating-buttons"
+import ServiceAreas from "@/components/ServiceAreas"
 
 export const metadata: Metadata = {
   title: "Karni Movers and Packers - Professional Relocation Services | Best Packers and Movers",
@@ -36,6 +37,7 @@ export default function Home() {
       <WhyChooseUs />
       <TestimonialsSection />
       <ContactSection />
+      <ServiceAreas/>
       <Footer />
       <FloatingButtons />
     </div>

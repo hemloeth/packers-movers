@@ -112,7 +112,7 @@ const ServiceAreas: React.FC = () => {
           Karni Movers & Packers offers moving and packing services in these key locations of Gurgaon, Haryana.
         </p>
 
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-1">
           {gurgaonAreas.map((area) => (
             <li key={area}>
               <Link href={`/service/${area.toLowerCase().replace(/\s+/g, "-")}`}>

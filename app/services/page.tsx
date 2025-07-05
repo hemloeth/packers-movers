@@ -18,7 +18,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <div className="pt-20">
+      <div>
         <ServicesSection />
         <ProcessSection />
       </div>

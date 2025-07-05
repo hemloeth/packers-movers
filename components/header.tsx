@@ -52,7 +52,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
               <div className="relative w-12 h-12">
-                <Image src="/carousel/logo.png" alt="Karni Movers and Packers Logo" fill className="object-contain "/>
+                <Image src="/carousel/logo.png" alt="Karni packers and movers Logo" fill className="object-contain "/>
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-red-600"> KARNI PACKERS</span>

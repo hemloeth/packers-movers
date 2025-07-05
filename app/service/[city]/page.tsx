@@ -30,7 +30,7 @@ export default function CityServicePage({ params }: Props) {
   return (
     <>
       <Head>
-        <title>{`Movers and Packers in ${cityName} | Karni Movers`}</title>
+        <title>{`packers and movers in ${cityName} | Karni Movers`}</title>
         <meta
           name="description"
           content={`Top-rated packers and movers service in ${cityName}.`}
@@ -41,7 +41,7 @@ export default function CityServicePage({ params }: Props) {
         {/* Title Section */}
         <div className="mb-12 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-red-600 mb-4">
-            Trusted Movers and Packers in {cityName}
+            Trusted packers and movers in {cityName}
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Experience hassle-free shifting with{" "}
@@ -86,7 +86,7 @@ export default function CityServicePage({ params }: Props) {
             Ready to move in {cityName}?
           </h3>
           <p className="text-gray-700 mb-4">
-            Let Karni Movers and Packers handle everything. From packing to
+            Let Karni packers and movers handle everything. From packing to
             delivery, we ensure a smooth and secure transition.
           </p>
           <a

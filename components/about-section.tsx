@@ -20,7 +20,7 @@ export default function AboutSection() {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">About Karni Movers & Packers</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  With over 15 years of experience in the relocation industry, Karni Movers and Packers has established
+                  With over 15 years of experience in the relocation industry, Karni packers and movers has established
                   itself as one of the most trusted names in professional moving services. We are blessed by Maa Karni
                   and committed to providing exceptional relocation solutions across India.
                 </p>
